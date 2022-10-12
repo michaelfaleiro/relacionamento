@@ -1,4 +1,5 @@
 const User = require("../models/User");
+const Endereco = require("../models/Endereco");
 
 module.exports = {
   async index(req, res) {
@@ -8,9 +9,11 @@ module.exports = {
   },
 
   async obterUm(req, res) {
-    const { id } = req.params;
+    const { user_id } = req.params;
 
-    const user = await User.findByPk(id);
+    const user = await User.findByPk(user_id, {
+      include: "Endereco",
+    });
     return res.status(200).json(user);
   },
 

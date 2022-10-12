@@ -6,6 +6,7 @@ class Endereco extends Model {
       {
         enderec: DataTypes.STRING,
         bairro: DataTypes.STRING,
+        user_id: DataTypes.INTEGER,
       },
       {
         sequelize,

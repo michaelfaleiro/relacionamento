@@ -13,7 +13,7 @@ class User extends Model {
     );
   }
   static associate(models) {
-    this.hasMany(models.Endereco, { foreignKey: "user_id", as: "Enderecos" });
+    this.hasMany(models.Endereco, { foreignKey: "user_id", as: "Endereco" });
   }
 }
 

@@ -9,4 +9,7 @@ const connection = new Sequelize(dbConfig);
 User.init(connection);
 Endereco.init(connection);
 
+User.associate(connection.models);
+Endereco.associate(connection.models);
+
 module.exports = connection;
